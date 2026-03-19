@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-surface-light: #f3f7fb;
+  --color-surface-dark: #020617;
+  --color-surface-card-light: #f9fbff;
+  --color-surface-card-dark: #020617;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif;
+  background: radial-gradient(circle at top left, #e0f7ff 0, #f9fbff 45%, #f3f7fb 100%);
+}
+
+html.dark body {
+  background: radial-gradient(circle at top left, #0c2a3e 0, #020617 60%, #020617 100%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* --- Premium Theme Transition --- */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+  pointer-events: none;
+}
+
+::view-transition-old(root) {
+  z-index: 1;
+}
+
+::view-transition-new(root) {
+  z-index: 9999;
+}
