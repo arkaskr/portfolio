@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 
 const scrollToId = (id) => {
@@ -8,6 +8,10 @@ const scrollToId = (id) => {
 }
 
 const Hero = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const shortText = "Ujaan, a 13-year-old trusted Rubber Stamp Shop in Barasat, West Bengal, offers a wide range of services including Photo Lab, Printing, Offset Printing, Graphic Design, and Office Supplies.";
+  const remainingText = " With a team of expert designers and printers, we deliver high-quality rubber stamps, prints, and designs that meet your unique needs. ️ From business logos to event invitations, our creative solutions will take your brand to the next level. Visit us today and experience the best in town!";
   return (
     <section id="hero" className="relative flex min-h-[75vh] items-center justify-center overflow-hidden px-6 pt-16 sm:pt-44 pb-12 md:px-4 sm:-mt-[8rem] lg:px-8">
       {/* --- Background Effects (Light/Dark Support) --- */}
@@ -36,16 +40,36 @@ const Hero = () => {
           <span className="inline-flex rounded-full bg-emerald-100 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-emerald-700 md:px-4 md:text-xs dark:bg-emerald-500/10 dark:text-emerald-300">
             Premium Digital Agency
           </span>
-          <h1 className="mt-6 text-4xl font-black leading-[1.15] tracking-tight text-slate-900 sm:text-5xl md:text-6xl dark:text-white">
-            Crafting Digital
+          <h1 className="mt-6 text-4xl font-black leading-[1.15] tracking-tight text-slate-900 sm:text-5xl md:text-5xl dark:text-white">
+            Ujjan
             <br />
             <span className="bg-gradient-to-r from-emerald-500 via-sky-500 to-blue-600 bg-clip-text text-transparent">
-              Masterpieces
+              Rubber Stamp Store
             </span>
           </h1>
           <p className="mx-auto mt-6 max-w-xl text-sm leading-relaxed text-slate-600 md:mx-0 md:text-base dark:text-slate-300">
-            Elevate your brand with award-winning design, precision marketing, and cutting-edge development tailored
-            for the modern era.
+            {isExpanded ? (
+              <>
+                {shortText}
+                {remainingText}
+                <button
+                  onClick={() => setIsExpanded(false)}
+                  className="ml-2 inline-flex items-center font-semibold text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300 transition-colors"
+                >
+                  Read Less
+                </button>
+              </>
+            ) : (
+              <>
+                {shortText}
+                <button
+                  onClick={() => setIsExpanded(true)}
+                  className="ml-2 inline-flex items-center font-semibold text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300 transition-colors"
+                >
+                  Read More...
+                </button>
+              </>
+            )}
           </p>
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center md:justify-start">
             <button 

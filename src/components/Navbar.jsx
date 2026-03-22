@@ -13,7 +13,8 @@ const Navbar = ({ theme, onToggleTheme }) => {
 
   const navLinks = [
     { label: 'Services', id: 'services' },
-    { label: 'Partners', id: 'brands' },
+    { label: 'Gallery', id: 'gallery' },
+    { label: 'Reviews', id: 'reviews' },
     { label: 'Contact', id: 'contact' },
   ]
 
@@ -22,10 +23,10 @@ const Navbar = ({ theme, onToggleTheme }) => {
       <nav className="relative flex w-full max-w-7xl items-center justify-between rounded-full border border-slate-100 bg-white/80 px-4 py-2 shadow-lg shadow-slate-900/5 backdrop-blur-md md:px-6 md:py-3 dark:border-slate-800 dark:bg-slate-900/80 dark:shadow-black/40">
         <div className="flex items-center gap-3">
           <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-500 text-xs font-semibold text-white shadow-md shadow-emerald-500/40 md:h-9 md:w-9 md:text-sm">
-            D
+            U
           </div>
           <span className="text-sm font-semibold tracking-tight text-slate-900 dark:text-white">
-            DigitalCraft
+            Ujaan
           </span>
         </div>
 

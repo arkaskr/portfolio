@@ -5,6 +5,9 @@ import Services from './components/Services'
 import BrandsStrip from './components/BrandsStrip'
 import CallToAction from './components/CallToAction'
 import Footer from './components/Footer'
+import StatsSection from './components/StatsSection'
+import Gallery from './components/Gallery'
+import Reviews from './components/Reviews'
 import ScrollToTop from './components/ScrollToTop'
 
 const App = () => {
@@ -85,7 +88,10 @@ const App = () => {
       <main className="pb-24">
         <Hero />
         <Services />
+        <StatsSection />
         <BrandsStrip />
+        <Gallery />
+        <Reviews />
         <CallToAction />
       </main>
       <Footer />
